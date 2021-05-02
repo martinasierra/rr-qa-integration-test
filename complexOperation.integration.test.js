@@ -43,6 +43,46 @@ describe('complexOperation - Integration Tests', () => {
         test('given as arguments, returns', () => {
             expect(complexOperations.calculateArea('square', 4, 4)).toBe(16);
         });
+    });
+
+    describe('sumGreaterThan', () => {
+        test('given null as argument, returns The params should be numbers', () => {
+            expect(complexOperations.sumGreaterThan()).toMatch('The params should be numbers');
+        });
+        test('given undefined and null as arguments, returns The params should be numbers', () => {
+            expect(complexOperations.sumGreaterThan(undefined,[])).toMatch('The params should be numbers');
+        });
+        test('given 2,4,8 as arguments, returns The params should be numbers', () => {
+            expect(complexOperations.sumGreaterThan(2,4,8)).toMatch('6 is less than 8');
+        });
+        test('given 8,2,4 as arguments, returns The params should be numbers', () => {
+            expect(complexOperations.sumGreaterThan(8,2,4)).toMatch('10 is greater than 4');
+        });
+    });
+
+    describe('intersectionBetweenArrays', () => {
+        test('given null as argument, returns The params should be arrays', () => {
+            expect(complexOperations.intersectionBetweenArrays()).toMatch('The params should be arrays');
+        });
+        test('given null as argument, returns The params should be arrays', () => {
+            expect(complexOperations.intersectionBetweenArrays([2,2,2])).toMatch('The params should be arrays');
+        });
+        test('given [1,2,3],[4,5,6] as arguments, returns There are no matching elements', () => {
+            expect(complexOperations.intersectionBetweenArrays([1,2,3],[4,5,6])).toMatch('There are not matching elements');
+        });
+        test('given [\'hola\'],[\'chau\'] as arguments, returns There are not matching elements', () => {
+            expect(complexOperations.intersectionBetweenArrays(['hola'],['chau'])).toMatch('There are not matching elements');
+        });
+        test('given [\'azul\',\'rojo\'], [\'amarillo\',\'rojo\'] as arguments, returns \'rojo\'', () => {
+            expect(complexOperations.intersectionBetweenArrays(['azul','rojo'], ['amarillo','rojo'])).toMatch['rojo'];
+        });
+        test('given as arguments, returns', () => {
+            expect(complexOperations.intersectionBetweenArrays()).toMatch('');
+        });
+    });
+
+    describe('sortArrayOfObjectsByKey', () => {
+        
     })
 });
 
