@@ -82,8 +82,19 @@ describe('complexOperation - Integration Tests', () => {
     });
 
     describe('sortArrayOfObjectsByKey', () => {
-        
-    })
+        test('', () => {
+            expect(complexOperations.sortArrayOfObjectsByKey([{name: 'Anoche', date: 2005}, {name: 'Miami', date: 1999}], 'date')).toMatch[{name: 'Miami', date: 1999},{name: 'Anoche', date: 2005}];
+        });
+        test('', () => {
+            expect(complexOperations.sortArrayOfObjectsByKey(undefined, 'date')).toMatch('The first param should be an array');
+        });
+        test('', () => {
+            expect(complexOperations.sortArrayOfObjectsByKey([{name: 'Anoche', date: 2005}, {name: 'Miami', date: 1999}], 2000)).toMatch('The second param should be an string');
+        });
+        test('', () => {
+            expect(complexOperations.sortArrayOfObjectsByKey([{name: 'Anoche', date: 2005}, {name: 'Miami', date: 1999}, {name: 'Jessico'}], 'date')).toMatch('Some elements in the array does not have the date property');
+        });
+    });
 });
 
 
