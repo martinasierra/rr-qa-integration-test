@@ -31,10 +31,10 @@ export const checkEmail = (email) => {
   return 'The email is valid';
 };
 
-// console.log(checkEmail());
-// console.log(checkEmail(''));
+//console.log(checkEmail());
+//console.log(checkEmail(''));
 // console.log(checkEmail('@'));
-// console.log(checkEmail('test@.com'));
+//console.log(checkEmail('test@.com'));
 // console.log(checkEmail('test@radiumrocket.com'));
 
 /**
