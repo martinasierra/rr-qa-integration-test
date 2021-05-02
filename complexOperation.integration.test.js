@@ -43,6 +43,9 @@ describe('complexOperation - Integration Tests', () => {
         test('given as arguments, returns', () => {
             expect(complexOperations.calculateArea('square', 4, 4)).toBe(16);
         });
+        test('given as arguments, returns', () => {
+            expect(complexOperations.calculateArea('circle', 2)).toBe(12.566370614359172);
+        });
     });
 
     describe('sumGreaterThan', () => {
@@ -76,16 +79,16 @@ describe('complexOperation - Integration Tests', () => {
         test('given [\'azul\',\'rojo\'], [\'amarillo\',\'rojo\'] as arguments, returns \'rojo\'', () => {
             expect(complexOperations.intersectionBetweenArrays(['azul','rojo'], ['amarillo','rojo'])).toMatch['rojo'];
         });
-        test('given as arguments, returns', () => {
-            expect(complexOperations.intersectionBetweenArrays()).toMatch('');
-        });
+       // test('given as arguments, returns', () => {
+         //   expect(complexOperations.intersectionBetweenArrays()).toMatch('');
+        //});
     });
 
     describe('sortArrayOfObjectsByKey', () => {
         test('', () => {
             expect(complexOperations.sortArrayOfObjectsByKey([{name: 'Anoche', date: 2005}, {name: 'Miami', date: 1999}], 'date')).toMatch[{name: 'Miami', date: 1999},{name: 'Anoche', date: 2005}];
         });
-        test('', () => {
+        test('given undefined, date as arguments returns The first param should be an array', () => {
             expect(complexOperations.sortArrayOfObjectsByKey(undefined, 'date')).toMatch('The first param should be an array');
         });
         test('', () => {
@@ -93,6 +96,27 @@ describe('complexOperation - Integration Tests', () => {
         });
         test('', () => {
             expect(complexOperations.sortArrayOfObjectsByKey([{name: 'Anoche', date: 2005}, {name: 'Miami', date: 1999}, {name: 'Jessico'}], 'date')).toMatch('Some elements in the array does not have the date property');
+        });
+    });
+
+    describe('numberOfOddAndEvenNumbers', () => {
+        test('given string array as argument, returns The param should be an array', () => {
+            expect(complexOperations.numberOfOddAndEvenNumbers('one, two')).toMatch('The param should be an array');
+        });
+        test('given null as argument, returns The param should be an array', () => {
+            expect(complexOperations.numberOfOddAndEvenNumbers()).toMatch('The param should be an array');
+        });
+        test('given 1, two as argument, returns The array should have only numbers', () => {
+            expect(complexOperations.numberOfOddAndEvenNumbers([1, 'two'])).toMatch('The array should have only numbers')
+        });
+        test('given [1, 3, 5] as argument, returns', () => {
+            expect(complexOperations.numberOfOddAndEvenNumbers([1, 3, 5])).toMatchObject({odd: 3, even: 0});
+        });
+        test('given [2, 4, 8] as argument, returns', () => {
+            expect(complexOperations.numberOfOddAndEvenNumbers([2, 4, 8])).toMatchObject({odd: 0, even: 3});
+        });
+        test('given [1, 4, 3, 8] as argument, returns', () => {
+            expect(complexOperations.numberOfOddAndEvenNumbers([1, 4, 3, 8])).toMatchObject({odd: 2, even: 2});
         });
     });
 });
