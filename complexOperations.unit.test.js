@@ -112,8 +112,8 @@ describe('complexOperation - Unit Tests', () => {
 
         it('test for intersectionBetweenArrays', () => {
             jest.spyOn(basicOperations, 'isArray').mockReturnValue(true);
-            jest.spyOn(basicOperations, 'arrayIntersection').mockReturnValue(true);
-            expect(complexOperations.intersectionBetweenArrays()).toEqual('There are not matching elements');
+            jest.spyOn(basicOperations, 'arrayIntersection').mockReturnValue([]);
+            expect(complexOperations.intersectionBetweenArrays([1999,2004,2007],[2001,2005,2008])).toEqual('There are not matching elements');
         });
 
         it('test for intersectionBetweenArrays', () => {
@@ -135,16 +135,14 @@ describe('complexOperation - Unit Tests', () => {
 
         it('test for sortArrayOfObjectsByKey', () => {
             jest.spyOn(basicOperations, 'isArray').mockReturnValue(true);
-            jest.spyOn(basicOperations, 'isString').mockReturnValue(true);
-            jest.spyOn(basicOperations, 'arrayElementsAreObjectWithKey').mockReturnValue();
-            jest.spyOn(basicOperations, 'sortArrayByKey').mockReturnValue();
+            jest.spyOn(basicOperations, 'isString').mockReturnValue(false);
+            jest.spyOn(basicOperations, 'sortArrayByKey').mockReturnValue('The second param should be an string');
         });
 
         it('test for sortArrayOfObjectsByKey', () => {
-            jest.spyOn(basicOperations, 'isArray').mockReturnValue(true);
+            jest.spyOn(basicOperations, 'isArray').mockReturnValue(false);
             jest.spyOn(basicOperations, 'isString').mockReturnValue(true);
-            jest.spyOn(basicOperations, 'arrayElementsAreObjectWithKey').mockReturnValue();
-            jest.spyOn(basicOperations, 'sortArrayByKey').mockReturnValue();
+            jest.spyOn(basicOperations, 'sortArrayByKey').mockReturnValue('The first param should be an array');
         });
     });
 
