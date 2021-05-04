@@ -129,20 +129,20 @@ describe('complexOperation - Unit Tests', () => {
         it('test for sortArrayOfObjectsByKey', () => {
             jest.spyOn(basicOperations, 'isArray').mockReturnValue(true);
             jest.spyOn(basicOperations, 'isString').mockReturnValue(true);
-            jest.spyOn(basicOperations, 'arrayElementsAreObjectWithKey').mockReturnValue();
-            jest.spyOn(basicOperations, 'sortArrayByKey').mockReturnValue();
+            jest.spyOn(basicOperations, 'arrayElementsAreObjectWithKey').mockReturnValue([{figure:'triange', sides:3},{figure:'square', sides:4}]);
+            expect(complexOperations.sortArrayOfObjectsByKey([{figure:'square', sides:4},{figure:'triange', sides:3}],'sides')).toEqual[{figure:'triange', sides:3},{figure:'square', sides:4}];
         });
 
         it('test for sortArrayOfObjectsByKey', () => {
             jest.spyOn(basicOperations, 'isArray').mockReturnValue(true);
             jest.spyOn(basicOperations, 'isString').mockReturnValue(false);
-            jest.spyOn(basicOperations, 'sortArrayByKey').mockReturnValue('The second param should be an string');
+            expect(complexOperations.sortArrayOfObjectsByKey()).toEqual('The second param should be an string');
         });
 
         it('test for sortArrayOfObjectsByKey', () => {
             jest.spyOn(basicOperations, 'isArray').mockReturnValue(false);
             jest.spyOn(basicOperations, 'isString').mockReturnValue(true);
-            jest.spyOn(basicOperations, 'sortArrayByKey').mockReturnValue('The first param should be an array');
+            expect(complexOperations.sortArrayOfObjectsByKey()).toEqual('The first param should be an array');
         });
     });
 
@@ -152,26 +152,24 @@ describe('complexOperation - Unit Tests', () => {
         });
         it('test for numberOfOddAndEvenNumbers', () => {
             jest.spyOn(basicOperations, 'isArray').mockReturnValue(true);
-            jest.spyOn(basicOperations, 'getOddNumbersFromArray').mockReturnValue(true);
-            jest.spyOn(basicOperations, 'getEvenNumbersFromArray').mockReturnValue(true);
+            jest.spyOn(basicOperations, 'isNumber').mockReturnValue(true);
+            jest.spyOn(basicOperations, 'getOddNumbersFromArray').mockReturnValue([-3]);
+            jest.spyOn(basicOperations, 'getEvenNumbersFromArray').mockReturnValue([-2,-4]);
+            expect(complexOperations.numberOfOddAndEvenNumbers(['-2,-3,-4'])).toEqual({odd: 1, even: 2});
         });
-
+        
         it('test for numberOfOddAndEvenNumbers', () => {
             jest.spyOn(basicOperations, 'isArray').mockReturnValue(true);
             jest.spyOn(basicOperations, 'getOddNumbersFromArray').mockReturnValue(true);
             jest.spyOn(basicOperations, 'getEvenNumbersFromArray').mockReturnValue(true);
+            expect(complexOperations.numberOfOddAndEvenNumbers()).toEqual();
         });
 
         it('test for numberOfOddAndEvenNumbers', () => {
-            jest.spyOn(basicOperations, 'isArray').mockReturnValue(true);
+            jest.spyOn(basicOperations, 'isArray').mockReturnValue(false);
             jest.spyOn(basicOperations, 'getOddNumbersFromArray').mockReturnValue(true);
             jest.spyOn(basicOperations, 'getEvenNumbersFromArray').mockReturnValue(true);
-        });
-
-        it('test for numberOfOddAndEvenNumbers', () => {
-            jest.spyOn(basicOperations, 'isArray').mockReturnValue(true);
-            jest.spyOn(basicOperations, 'getOddNumbersFromArray').mockReturnValue(true);
-            jest.spyOn(basicOperations, 'getEvenNumbersFromArray').mockReturnValue(true);
+            expect(complexOperations.numberOfOddAndEvenNumbers()).toEqual();
         });
     });
 });

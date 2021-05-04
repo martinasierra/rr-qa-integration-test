@@ -98,7 +98,7 @@ describe('complexOperation - Integration Tests', () => {
             expect(complexOperations.sortArrayOfObjectsByKey([{name: 'Anoche', date: 2005}, {name: 'Miami', date: 1999}], 2000)).toEqual('The second param should be an string');
         });
         test('returns Some elements in the array does not have the date property', () => {
-            expect(complexOperations.sortArrayOfObjectsByKey([{name: 'Anoche', date: 2005}, {name: 'Miami', date: 1999}], 'date')).toEqual('Some elements in the array does not have the date property');
+            expect(complexOperations.sortArrayOfObjectsByKey([{name: 'Anoche', date: 2005}, {name: 'Miami'}], 'date')).toEqual('Some elements in the array does not have the date property');
         });
     });
 
