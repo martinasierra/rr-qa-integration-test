@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1620096925647" clover="3.2.0">
-  <project timestamp="1620096925647" name="All files">
+<coverage generated="1620097382663" clover="3.2.0">
+  <project timestamp="1620097382664" name="All files">
     <metrics statements="82" coveredstatements="81" conditionals="49" coveredconditionals="48" methods="25" coveredmethods="25" elements="156" coveredelements="154" complexity="0" loc="82" ncloc="82" packages="1" files="2" classes="2"/>
     <file name="basicOperations.js" path="C:\Users\Martina\Desktop\RR_BAQA\rr-qa-integration-test\basicOperations.js">
       <metrics statements="35" coveredstatements="35" conditionals="4" coveredconditionals="4" methods="19" coveredmethods="19"/>
       <line num="1" count="2" type="stmt"/>
-      <line num="2" count="28" type="stmt"/>
+      <line num="2" count="27" type="stmt"/>
       <line num="5" count="2" type="stmt"/>
       <line num="6" count="21" type="stmt"/>
       <line num="9" count="2" type="stmt"/>
@@ -83,12 +83,12 @@
       <line num="139" count="1" type="stmt"/>
       <line num="141" count="4" type="stmt"/>
       <line num="155" count="2" type="stmt"/>
-      <line num="156" count="10" type="cond" truecount="2" falsecount="0"/>
-      <line num="157" count="2" type="stmt"/>
-      <line num="159" count="8" type="stmt"/>
-      <line num="160" count="5" type="cond" truecount="2" falsecount="0"/>
+      <line num="156" count="9" type="cond" truecount="2" falsecount="0"/>
+      <line num="157" count="3" type="stmt"/>
+      <line num="159" count="6" type="stmt"/>
+      <line num="160" count="6" type="cond" truecount="2" falsecount="0"/>
       <line num="161" count="2" type="stmt"/>
-      <line num="163" count="3" type="stmt"/>
+      <line num="163" count="4" type="stmt"/>
     </file>
   </project>
 </coverage>
