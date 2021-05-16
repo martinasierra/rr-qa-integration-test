@@ -84,6 +84,12 @@ describe('complexOperation - Unit Tests', () => {
             jest.spyOn(basicOperations, 'isNumber').mockReturnValue(false);
             expect(complexOperations.calculateArea('rectangle', 'four', 'eight')).toEqual('number1 and number2 should be numbers');
         });
+
+        test('should return trapeze is not supported', () => {
+            jest.spyOn(basicOperations, 'isSupportedFigure').mockReturnValue(true);
+            jest.spyOn(basicOperations, 'isNumber').mockReturnValue(true);
+            expect(complexOperations.calculateArea('trapeze', 4, 8)).toEqual('trapeze is not supported');
+        })
     });
 
     describe('sumGreaterThan', () => {
